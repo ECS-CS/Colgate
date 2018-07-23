@@ -87,8 +87,15 @@ Part of the web page structure is called **nesting**. Notice above how the tag `
 
 On MACs we use TextEdit to create HTML documents, Let's open TextEdit:
 
-1.  Go to Applications
-2.  Click on TextEdit
+1.  Go to **Applications**
+2.  Click on **TextEdit**
+3.  In the top left, click **TextEdit** then **Preferences...**
+
+4.  In the **New Document** tab, you should have:
+    ![FirstTab](./assets/firstTab.png)
+
+5.  In the **Open and Save** tab, you should have:
+    ![SecondTab](./assets/secondTab.png)
 
 ## STEP 2
 
