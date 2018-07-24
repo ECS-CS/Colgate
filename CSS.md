@@ -54,18 +54,6 @@ p {
 }
 ```
 
----
-
-## 🎉 10 MINUTE BREAK
-
-Tips on having an effective break:
-
-1.  Bathroom
-2.  Water
-3.  Typing drills
-
----
-
 # CSS SELECTORS
 
 1.  In CSS, selectors declare which part of the markup a style applies to by matching tags and attributes in the markup itself.
@@ -181,18 +169,6 @@ For Example:
 </body>
 </html>
 ```
-
----
-
-## 🎉 10 MINUTE BREAK
-
-Tips on having an effective break:
-
-1.  Bathroom
-2.  Water
-3.  Typing drills
-
----
 
 # EXERCISES
 
