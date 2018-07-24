@@ -61,7 +61,7 @@ function gameTimer(){
       if(timer === 0){
         clearInterval(window.myMatchingGameInterval);
         // GAMEOVER
-        const images = [...document.body.querySelectorAll('.card')];
+        const images = [...document.body.querySelectorAll('.scene')];
         images.forEach(image => {
           image.removeEventListener('click', flipCard);
           image.classList.add('fade');
@@ -110,11 +110,7 @@ function updateClass(newClass, oldClass){
 // HELPER FUNCTION
 // IF THE CARDS DON'T MATCH FLIP THE CARDS
 function flipBack(cards){
-  cards.forEach(({ element }) => {
-    const image = element.querySelector('img');
-    setTimeout(() => image.setAttribute('src', './images/pokemonCard.png'), 500);
-    image.removeAttribute('class');
-  });
+  cards.forEach(({ element }) => setTimeout(() => element.querySelector('.card').classList.remove('is-flipped'), 1000));
 }
 
 // WHEN WE CLICK ON A CARD WE RUN THIS FUNCTION EVERY TIME
@@ -122,8 +118,8 @@ function flipBack(cards){
 function flipCard(){
   const card = this;
   const index = card.dataset.index;
-  const image = card.querySelector('img');
-  image.setAttribute('src', dupCards[index].src);
+  card.querySelector('.card').classList.add('is-flipped');
+  card.querySelector('.card__face--back').querySelector('img').setAttribute('src', dupCards[index].src);
   selectedCards.push({ card: dupCards[index], element: card });
   if(selectedCards.length === 2){
     setTimeout(() => checkForMatch(), 300);
@@ -145,15 +141,35 @@ function gameOver(){
 // ADDS ALL THE CARDS TO THE HTML
 function createBoard (){
   return dupCards.forEach((card, idx) => {
-    const img = document.createElement('img');
-    const div = document.createElement('div');
-    img.setAttribute('src', './images/pokemonCard.png');
-    div.classList.add('card');
-    div.dataset.match = card.match;
-    div.dataset.index = idx;
-    div.addEventListener('click', flipCard);
-    div.appendChild(img);
-    app.appendChild(div);
+    // CREATE DOM ELEMENTS
+    const imgFront = document.createElement('img');
+    const imgBack = document.createElement('img');
+    const scene = document.createElement('div');
+    const cardDiv = document.createElement('div');
+    const cardFace = document.createElement('div');
+    const cardBack = document.createElement('div');
+
+    imgFront.setAttribute('src', './images/pokemonCard.png');
+    cardFace.appendChild(imgFront);
+    cardBack.appendChild(imgBack);
+
+    scene.classList.add('scene');
+    cardDiv.classList.add('card');
+    cardFace.classList.add('card__face', 'card__face--front');
+    cardBack.classList.add('card__face', 'card__face--back');
+
+    // ATTRIBUTES THAT HELP US IDENTIFY OUR ELEMENTS
+    scene.dataset.match = card.match;
+    scene.dataset.index = idx;
+
+    // ADD A CLICK EVENT TO EVERY CARD
+    scene.addEventListener('click', flipCard);
+
+    // ADD EACH CREATED ELEMENT TO THE DOM
+    cardDiv.appendChild(cardFace);
+    cardDiv.appendChild(cardBack);
+    scene.appendChild(cardDiv);
+    app.appendChild(scene);
   });
 }
 
