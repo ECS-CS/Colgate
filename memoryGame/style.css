@@ -101,9 +101,10 @@ button:hover {
 }
 
 #scoreTime {
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr;
   margin: 15px;
+  height: 80px;
 }
 
 #score {

@@ -3,8 +3,11 @@ const app = document.getElementById('app');
 const status = document.getElementById('status');
 const time = document.getElementById('time');
 const scoreDiv = document.getElementById('score');
+const scoreTime = document.getElementById('scoreTime');
 const gameoverDiv = document.getElementById('gameover');
 const finalScore = document.querySelector('.finalScore');
+const startBTN = document.getElementById('start');
+startBTN.addEventListener('click', () => createBoard());
 const reset = document.getElementById('reset').addEventListener('click', () => window.location.reload());
 
 // ARRAY CONTAINING THE OBJECTS WE WILL RENDER ON THE DOM
@@ -129,7 +132,13 @@ function flipCard(){
   card.querySelector('.card__face--back').querySelector('img').setAttribute('src', dupCards[index].src);
   selectedCards.push({ card: dupCards[index], element: card });
   if(selectedCards.length === 2){
-    setTimeout(() => checkForMatch(), 300);
+    if(selectedCards[0].element !== selectedCards[1].element){
+      setTimeout(() => checkForMatch(), 300);
+    } else {
+      status.textContent = "Can't choose the same card twice! Try again!";
+      flipBack(selectedCards);
+      selectedCards = [];
+    }
   }
 }
 
@@ -151,6 +160,11 @@ function gameOver(){
 
 // ADDS ALL THE CARDS TO THE HTML
 function createBoard (){
+  // START THE TIMER AFTER 1 SECOND
+  setTimeout(() => gameTimer(), 1000);
+  startBTN.style.display = "none";
+  scoreTime.style.display = 'grid';
+
   return dupCards.forEach((card, idx) => {
     // CREATE DOM ELEMENTS
     const imgFront = document.createElement('img');
@@ -183,7 +197,3 @@ function createBoard (){
     app.appendChild(scene);
   });
 }
-
-createBoard();
-// START THE TIMER AFTER 1 SECOND
-setTimeout(() => gameTimer(), 1000);
