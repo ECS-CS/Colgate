@@ -5,35 +5,19 @@ const scoreDiv = document.getElementById('score');
 
 const cards = [
   {
-    "name": "Name1",
+    "match": "Name1",
     "src": "./images/201519_1.jpg"
   },
   {
-    "name": "Name1",
-    "src": "./images/201519_1.jpg"
-  },
-  {
-    "name": "Name2",
+    "match": "Name2",
     "src": "./images/800514_1.jpg"
   },
   {
-    "name": "Name2",
-    "src": "./images/800514_1.jpg"
-  },
-  {
-    "name": "Name3",
+    "match": "Name3",
     "src": "./images/802390_01.jpg"
   },
   {
-    "name": "Name3",
-    "src": "./images/802390_01.jpg"
-  },
-  {
-    "name": "Name4",
-    "src": "./images/804276_01.jpg"
-  },
-  {
-    "name": "Name4",
+    "match": "Name4",
     "src": "./images/804276_01.jpg"
   }
 ];
@@ -42,28 +26,31 @@ let selectedCards = [];
 let score = 0;
 
 function checkForMatch() {
-  if(selectedCards[0].name === selectedCards[1].name){
+  if(selectedCards[0].card.match === selectedCards[1].card.match){
     score++;
     status.textContent = 'Found a match!';
-    scoreDiv.classList.remove('badScore');
-    scoreDiv.classList.add('goodScore');
-    selectedCards.forEach(({ card }) => setTimeout(() => card.classList.add('fade'), 300));
+    updateClass('goodScore', 'badScore');
+    selectedCards.forEach(card => setTimeout(() => card.element.classList.add('fade'), 300));
   } else {
     score--;
     status.textContent = 'Try again!';
-    scoreDiv.classList.remove('goodScore');
-    scoreDiv.classList.add('badScore');
+    updateClass('badScore', 'goodScore');
     flipBack(selectedCards);
   }
   selectedCards = [];
   scoreDiv.textContent = score;
 }
 
+function updateClass(newClass, oldClass){
+  scoreDiv.classList.remove(oldClass);
+  scoreDiv.classList.add(newClass);
+}
+
 function flipBack(cards){
-  cards.forEach(({ card }) => {
-    card.classList.add('card');
-    card.querySelector('img').setAttribute('src', './images/pokemonCard.png');
-    card.querySelector('img').removeAttribute('class');
+  cards.forEach(({ element }) => {
+    element.classList.add('card');
+    element.querySelector('img').setAttribute('src', './images/pokemonCard.png');
+    element.querySelector('img').removeAttribute('class');
   });
 }
 
@@ -74,19 +61,21 @@ function flipCard(){
   card.classList.remove('card');
   image.classList.add('myImage');
   image.setAttribute('src', cards[index].src);
-  selectedCards.push({ name: card.dataset.name, card });
+  selectedCards.push({ card: cards[index], element: card });
   if(selectedCards.length === 2){
     setTimeout(() => checkForMatch(), 300);
   }
 }
 
 function createBoard (){
-  cards.sort(() => Math.random() - 0.5).forEach((card, idx) => {
+  const dupCards = cards.map(c => c).concat(cards);
+  dupCards.sort(() => Math.random() - 0.5).forEach((card, idx) => {
+    console.log(card);
     const img = document.createElement('img');
     const div = document.createElement('div');
     div.classList.add('card');
     img.setAttribute('src', './images/pokemonCard.png');
-    div.dataset.name = card.name;
+    div.dataset.match = card.match;
     div.dataset.index = idx;
     div.addEventListener('click', flipCard);
     div.appendChild(img);
