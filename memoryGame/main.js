@@ -3,6 +3,9 @@ const app = document.getElementById('app');
 const status = document.getElementById('status');
 const time = document.getElementById('time');
 const scoreDiv = document.getElementById('score');
+const gameoverDiv = document.getElementById('gameover');
+const finalScore = document.querySelector('.finalScore');
+const reset = document.getElementById('reset').addEventListener('click', () => window.location.reload());
 
 // ARRAY CONTAINING THE OBJECTS WE WILL RENDER ON THE DOM
 // THE KEY 'MATCH' IS USED TO TO COMPARE OUR CARDS
@@ -47,7 +50,7 @@ const colors = [
 ];
 
 // TIMER
-let timer = 30;
+let timer = 60;
 
 function randomBGC(arr) {
   const random = Math.floor(Math.random() * arr.length);
@@ -67,7 +70,11 @@ function gameTimer(){
           image.classList.add('fade');
           setTimeout(() => image.remove(), 2000);
         });
-        status.textContent = 'Gameover!';
+        status.textContent = '';
+        setTimeout(() => { 
+          gameoverDiv.style.display = 'block';
+          finalScore.textContent = score; 
+        }, 300);
         time.remove();
       } else if(timer % 10 === 0){
         document.body.style.background = randomBGC(colors);
@@ -135,6 +142,10 @@ function gameOver(){
     time.textContent = '';
     clearInterval(window.myMatchingGameInterval);
     setTimeout(() => chosen.forEach(image => image.remove()), 2000);
+    setTimeout(() => { 
+      gameoverDiv.style.display = 'block';
+      finalScore.textContent = score;
+   }, 3000);
   }
 }
 
@@ -149,7 +160,7 @@ function createBoard (){
     const cardFace = document.createElement('div');
     const cardBack = document.createElement('div');
 
-    imgFront.setAttribute('src', './images/pokemonCard.png');
+    imgFront.setAttribute('src', 'https://i.pinimg.com/736x/c9/e5/61/c9e561d61fc50771ece1255125f7fb1a.jpg');
     cardFace.appendChild(imgFront);
     cardBack.appendChild(imgBack);
 
