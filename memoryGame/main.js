@@ -123,11 +123,16 @@ function gameTimer(){
           setTimeout(() => image.remove(), 2000);
         });
         status.textContent = '';
+
+        // REMOVE
+        scoreTime.remove();
+        status.remove();
+        scoreDiv.remove();
+
         setTimeout(() => { 
           gameoverDiv.style.display = 'block';
           finalScore.textContent = score; 
-        }, 300);
-        time.remove();
+        }, 500);
       } else if(timer % 10 === 0){
         document.body.style.background = randomBGC(colors);
       }
