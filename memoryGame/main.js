@@ -1,6 +1,7 @@
 // DOM ELEMENTS
 const app = document.getElementById('app');
 const status = document.getElementById('status');
+const desc = document.getElementById('desc');
 const time = document.getElementById('time');
 const scoreDiv = document.getElementById('score');
 const scoreTime = document.getElementById('scoreTime');
@@ -163,6 +164,7 @@ function createBoard (){
   // START THE TIMER AFTER 1 SECOND
   setTimeout(() => gameTimer(), 1000);
   startBTN.style.display = "none";
+  desc.style.display = "none";
   scoreTime.style.display = 'grid';
 
   return dupCards.forEach((card, idx) => {
