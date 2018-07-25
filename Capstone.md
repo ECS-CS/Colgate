@@ -13,15 +13,13 @@
 
 Log into CodePen. If you remember your login information, GREAT! If not, give us a second to help you!
 
-# HTML (5-10 MINS)
+# HTML
 
 The structure of our webpage.
 
 **REVIEW:**
 
 1.  Does anyone remember the difference between giving our HTML elements classes vs. ids?
-
-Lets spend the next 5-10 minutes making our HTML document more unique! Use your imagination! Do whatever you like, whatever you think makes sense. Make your game standout. **Add in any additional HTML elements!**
 
 ```html
 <!DOCTYPE html>
@@ -62,9 +60,9 @@ Lets spend the next 5-10 minutes making our HTML document more unique! Use your 
 </html>
 ```
 
-# CSS (10-20 MINUTES)
+# CSS (15-30 MINUTES)
 
-Here's my code below. Spend some time making my code, yours! **REMEMBER**, CSS gives us the power to transform plain HTML elements and make them look unique. I know there are CSS attributes below we haven't learned, but it doesn't hurt to change a value to see what happens! Explore for the next 15 minutes, make changes!
+Here's my code below. Spend some time making my code, yours! **REMEMBER**, CSS gives us the power to transform plain HTML elements and make them look unique. I know there are CSS attributes below we haven't learned, but it doesn't hurt to change a value to see what happens! Explore for the next 20 minutes, make changes!
 
 **Great Resource:** https://www.w3schools.com/css/default.asp
 
@@ -77,7 +75,7 @@ Here's my code below. Spend some time making my code, yours! **REMEMBER**, CSS g
 - Change Border Colors
 - Change Border Sizes
 - Change Border Styles
-- Change anything else...
+- Change Anything else... if you don't know how to change something, please ASK US!
 
 ```css
 body {
@@ -299,17 +297,15 @@ button:hover {
 
 # CAPSTONE PROJECT DEVELOPMENT
 
-**FULL DISCLOSURE:** There are pieces of code you won't understand. Truthfully, explaining everything at this point may make you more confused. So you will touch the important topics.
-
-🤦🏾‍ 🤬 😶 🤓 😢 😎 🙈 💀
+**FULL DISCLOSURE:** There are pieces of code you won't understand. Truthfully, explaining everything at this point may make you more confused. So you will touch the important topics. 🤦🏾‍ 🤬 😶 🤓 😢 😎 🙈 💀
 
 I PROVIDED COMMENTS TO GUIDE YOU THROUGH THE LESSON. MAKE SURE YOU READ ALL THE COMMENTS TO UNDERSTAND WHAT YOU NEED TO DO.
 
 **OBSERVE THE COMMENTS. WHENEVER YOU SEE A LINE WITH `//` PRECEDING, IS CONSIDERED A COMMENT. THESE LINES ARE SKIPPED WHEN OUR CODE COMPILES.**
 
-THESE STEPS NEED TO BE FOLLOWED IN ORDER. EVERYTHING WE PASTE INTO THE `JS` SECTION IN CODEPEN MUST BE PASTED IN ORDER UNDERNEATH EACH OTHER.
+**THESE STEPS NEED TO BE FOLLOWED IN ORDER. EVERYTHING WE PASTE INTO THE `JS` SECTION IN CODEPEN MUST BE PASTED IN ORDER UNDERNEATH EACH OTHER.**
 
-UNDERNEATH THE COMMENTS YOU INSERT YOUR CODE. WE WILL GO OVER IT AS A CLASS.
+**UNDERNEATH THE COMMENTS YOU INSERT YOUR CODE. WE WILL GO OVER IT AS A CLASS.**
 
 # THE DOM
 
@@ -328,21 +324,24 @@ UNDERNEATH THE COMMENTS YOU INSERT YOUR CODE. WE WILL GO OVER IT AS A CLASS.
 
 ```javascript
 // INSIDE THE PARENTHESIS PUT THE ID OF THE ELEMENT WE ARE TARGETTING
-const app = document.getElementById("...");
-const status = document.getElementById("...");
-const desc = document.getElementById("...");
-const time = document.getElementById();
-const scoreDiv = document.getElementById();
-const scoreTime = document.getElementById();
-const gameoverDiv = document.getElementById();
-const startBTN = document.getElementById();
-const reset = document.getElementById();
+const app = document.getElementById("...............");
+const status = document.getElementById("...............");
+const desc = document.getElementById("...............");
+const time = document.getElementById("...............");
+const scoreDiv = document.getElementById("...............");
+const scoreTime = document.getElementById("...............");
+const gameoverDiv = document.getElementById("...............");
+const startBTN = document.getElementById("...............");
+const reset = document.getElementById("...............");
 
 // DO NOT TOUCH
 const finalScore = document.querySelector(".finalScore");
 
-// ADDING CLICK EVENTS TO OUR BUTTONS
-startBTN.addEventListener("click", () => createBoard());
+// INVOKE THE createBoard() FUNCTION
+startBTN.addEventListener("click", () => ..............);
+
+
+
 reset.addEventListener("click", () => window.location.reload());
 ```
 
@@ -407,7 +406,7 @@ const dupCards = cards.map(c => c).concat(cards);
 # 🚨 CHALLENGE 🚨
 
 1.  Below we created a random number and store it in a variable named `random`.
-2.  How do we use this value? We need to use this value to access an element in our array.
+2.  How do we use this variable? We need to use this variable to access an element in our array.
 
 ```javascript
 function randomBGC(arr) {
@@ -499,7 +498,8 @@ function gameTimer() {
 1.  Notice we are using an `if` statement to check the indexes in our array for a match.
     - Inside the **()** we need to develop a condition that returns either a true or false.
       - HINT: We are going to use the `selectedCards` array to compare the first 2 indexes.
-      - Spend the next 5-10 minutes thinking about this.
+      - We are then using the `match` key to compare our values
+        - **HINT:** `.card.match`
 
 ```javascript
 function checkForMatch() {
