@@ -132,8 +132,8 @@ button:hover {
 
 #app {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, 150px);
+  grid-gap: 10px;
   align-content: center;
   justify-content: center;
 }
@@ -154,8 +154,8 @@ button:hover {
 */
 
 .scene {
-  width: 300px;
-  height: 410px;
+  width: 150px;
+  height: 210px;
   perspective: 600px;
 }
 

@@ -17,25 +17,53 @@ const reset = document.getElementById('reset').addEventListener('click', () => w
 const cards = [
   {
     "match": "Name1",
-    "src": "./images/201519_1.jpg"
+    "src": "https://sneakernews.com/wp-content/uploads/2018/05/off-white-air-jordan-1-unc-dark-powder-blue-cone-release.jpg"
   },
   {
     "match": "Name2",
-    "src": "./images/800514_1.jpg"
+    "src": "https://sneakerbardetroit.com/wp-content/uploads/2017/05/air-jordan-1-off-white-4.jpg"
   },
   {
     "match": "Name3",
-    "src": "./images/802390_01.jpg"
+    "src": "https://sneakernews.com/wp-content/uploads/2016/10/air-jordan-11-suede-400-release-details-01.jpg"
   },
   {
     "match": "Name4",
-    "src": "./images/804276_01.jpg"
-  }
+    "src": "https://cdn5.kicksonfire.com/wp-content/uploads/2018/06/nike-react-element-87_anthracite-black-white_aq1090-001-bstnstore-1-681x454.jpg?x76107"
+  },
+  {
+    "match": "Name5",
+    "src": "https://sneakerbardetroit.com/wp-content/uploads/2015/06/air-jordan-1-retro-high-shattered-backboard-release-reminder1.jpg"
+  },
+  {
+    "match": "Name6",
+    "src": "https://sneakernews.com/wp-content/uploads/2016/02/adidas-yeezy-boost-350-pirate-black-detailed-look-1.jpg"
+  },
+	{
+		"match": "Name7",
+		"src": "https://timedotcom.files.wordpress.com/2018/07/180702-lebron-james-lakers.jpg?quality=85"
+  },
+  {
+    "match": "Name8",
+    "src": "https://images.psacard.com/s3/cu-psa/autographfacts/kobe-bryant-signed-photo-1163.jpg?h=1000"
+  },
+  {
+    "match": "Name9",
+    "src": "http://1-photos7.motorcar.com/used-2015-lamborghini-huracan-2drcoupelp6104-12628-16499303-10-1024.jpg"
+  },
+	{
+		"match": "Name10",
+		"src": "https://staticshop.o2.co.uk/product/images/iphone-x-space-grey-sku-header.png?cb=25dc5afb0412fc40a28aa29d82cb53d0"
+	},
+	{
+		"match": "Name11",
+		"src": "https://static.highsnobiety.com/wp-content/uploads/2018/01/26120706/nike-air-jordan-3-black-cement-release-price-00.jpg"
+	}
 ];
 
 // IN ORDER TO MATCH CARDS, WE NEED TO DUPLICATE THE ARRAY WE DEFINED ABOVE
 // IN OTHER WORDS WE ARE DOUBLING ALL THE CARDS IN OUR ARRAY
-const dupCards = cards.map(c => c).concat(cards).sort(() => Math.random() - 0.5);
+const dupCards = cards.map(c => c).concat(cards);
 
 // WHEN A USER CHOOSES A CARD WE WILL INSERT IT INTO THIS ARRAY
 let selectedCards = [];
@@ -59,6 +87,26 @@ let timer = 60;
 function randomBGC(arr) {
   const random = Math.floor(Math.random() * arr.length);
   return arr[random];
+}
+
+function shuffle(array) {
+  let counter = array.length;
+
+  // While there are elements in the array
+  while (counter > 0) {
+      // Pick a random index
+      let index = Math.floor(Math.random() * counter);
+
+      // Decrease counter by 1
+      counter--;
+
+      // And swap the last element with it
+      let temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
+  }
+
+  return array;
 }
 
 function gameTimer(){
@@ -162,12 +210,12 @@ function gameOver(){
 // ADDS ALL THE CARDS TO THE HTML
 function createBoard (){
   // START THE TIMER AFTER 1 SECOND
-  setTimeout(() => gameTimer(), 1000);
+  setTimeout(() => gameTimer(), 4000);
   startBTN.style.display = "none";
   desc.style.display = "none";
   scoreTime.style.display = 'grid';
 
-  return dupCards.forEach((card, idx) => {
+  return shuffle(dupCards).forEach((card, idx) => {
     // CREATE DOM ELEMENTS
     const imgFront = document.createElement('img');
     const imgBack = document.createElement('img');
@@ -176,21 +224,24 @@ function createBoard (){
     const cardFace = document.createElement('div');
     const cardBack = document.createElement('div');
 
-    imgFront.setAttribute('src', 'https://i.pinimg.com/736x/c9/e5/61/c9e561d61fc50771ece1255125f7fb1a.jpg');
+    imgFront.setAttribute('src', dupCards[idx].src);
     cardFace.appendChild(imgFront);
     cardBack.appendChild(imgBack);
-
+    
     scene.classList.add('scene');
     cardDiv.classList.add('card');
     cardFace.classList.add('card__face', 'card__face--front');
     cardBack.classList.add('card__face', 'card__face--back');
-
+    
     // ATTRIBUTES THAT HELP US IDENTIFY OUR ELEMENTS
     scene.dataset.match = card.match;
     scene.dataset.index = idx;
-
+    
     // ADD A CLICK EVENT TO EVERY CARD
-    scene.addEventListener('click', flipCard);
+    setTimeout(() => {
+      imgFront.setAttribute('src', 'https://i.pinimg.com/736x/c9/e5/61/c9e561d61fc50771ece1255125f7fb1a.jpg');
+      scene.addEventListener('click', flipCard);
+    }, 4000);
 
     // ADD EACH CREATED ELEMENT TO THE DOM
     cardDiv.appendChild(cardFace);

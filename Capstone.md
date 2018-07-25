@@ -307,7 +307,7 @@ FULL DISCLOSURE: There are pieces of code you won't understand. Truthfully, expl
 
 🤦🏾‍🤬😶🤓😢😎🙈💀
 
-# STEP 1 (5 MINUTES)
+# STEP 1
 
 1.  In the example below, we are selecting various HTML elements.
 2.  The DOM exposes several methods "functions" that allow us to grab elements. For example: `getElementById` will get a HTML element by it's `id`. Likewise, `querySelector` allows us to select elements by `class` or `id`.
@@ -316,41 +316,85 @@ FULL DISCLOSURE: There are pieces of code you won't understand. Truthfully, expl
 // DOM ELEMENTS
 const app = document.getElementById("app");
 const status = document.getElementById("status");
+const desc = document.getElementById("desc");
 const time = document.getElementById("time");
 const scoreDiv = document.getElementById("score");
+const scoreTime = document.getElementById("scoreTime");
 const gameoverDiv = document.getElementById("gameover");
 const finalScore = document.querySelector(".finalScore");
+const startBTN = document.getElementById("start");
+startBTN.addEventListener("click", () => createBoard());
 const reset = document
   .getElementById("reset")
   .addEventListener("click", () => window.location.reload());
 ```
 
-# STEP 2 (5 MINUTES)
+# STEP 2
+
+1.  As we learned yesterday, we are creating an `array` that will store our cards.
+2.  Another `datatype` we didn't get into are `Objects`. Objects store collections of data, in key/value pairs. Most of the time, the data is related
+
+```javascript
+const cards = [
+  {
+    match: "Name1",
+    src:
+      "https://sneakernews.com/wp-content/uploads/2018/05/off-white-air-jordan-1-unc-dark-powder-blue-cone-release.jpg"
+  },
+  {
+    match: "Name2",
+    src:
+      "https://sneakerbardetroit.com/wp-content/uploads/2017/05/air-jordan-1-off-white-4.jpg"
+  },
+  {
+    match: "Name3",
+    src:
+      "https://sneakernews.com/wp-content/uploads/2016/10/air-jordan-11-suede-400-release-details-01.jpg"
+  },
+  {
+    match: "Name4",
+    src:
+      "https://cdn5.kicksonfire.com/wp-content/uploads/2018/06/nike-react-element-87_anthracite-black-white_aq1090-001-bstnstore-1-681x454.jpg?x76107"
+  },
+  {
+    match: "Name5",
+    src:
+      "https://sneakerbardetroit.com/wp-content/uploads/2015/06/air-jordan-1-retro-high-shattered-backboard-release-reminder1.jpg"
+  },
+  {
+    match: "Name6",
+    src:
+      "https://sneakernews.com/wp-content/uploads/2016/02/adidas-yeezy-boost-350-pirate-black-detailed-look-1.jpg"
+  },
+  {
+    match: "Name7",
+    src:
+      "https://timedotcom.files.wordpress.com/2018/07/180702-lebron-james-lakers.jpg?quality=85"
+  }
+];
+```
+
+# STEP 3
 
 ```javascript
 ```
 
-# STEP 3 (5 MINUTES)
+# STEP 4
 
 ```javascript
 ```
 
-# STEP 4 (5 MINUTES)
+# STEP 5
 
 ```javascript
 ```
 
-# STEP 5 (5 MINUTES)
+# STEP 6
 
 ```javascript
 ```
 
-# STEP 6 (5 MINUTES)
-
-```javascript
-```
-
-# STEP 7 (5 MINUTES)
+# STEP 7
 
 ```javascript
 ```
