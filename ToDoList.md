@@ -284,24 +284,15 @@ h2{
 // #2
 submitButton.addEventListener('click', ............);
 
-
+```
 # STEP 2
 
 1.  Yesterday we learned about conditional statements. Can anybody tell me those three types.
 
 # 🚨 CHALLENGE 🚨
 
-1.  Spend the next 5-15 minutes finding images on the internet. Remember you are copying the `image address` **NOT** the `link address`. Once you find your image, you will **PASTE** the link inside the `" "` for the `src` key.
-2.  Regarding the `value` for the `match` key, use a one word description of your image. **REMEMBER** these values must be **UNIQUE**.
-3.  **REMEMBER:** Elements inside of an array are separated by commas.
-4.  Our objects will have this shape:
+1.  Spend the next 5-10 doing the task below.
 
-```javascript
-  {
-    match: "",
-    src: ""
-  }
-```
 
 ```javascript
 /*
