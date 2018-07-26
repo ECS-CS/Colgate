@@ -1,6 +1,6 @@
 # CAPSTONE PROJECT
 
-### DEMO: https://codepen.io/GainorB/full/yqXNYx/
+### DEMO: https://codepen.io/jchap123/pen/mjMawo
 
 # OBJECTIVE
 
