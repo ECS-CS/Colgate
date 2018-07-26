@@ -86,113 +86,95 @@ Here's my code below. Spend some time making my code, yours! **REMEMBER**, CSS g
 
 ```css
 body {
-    background-color: cornflowerblue; 
-}
-
-h1{
+    background-color: cornflowerblue;  
+  }
+  h1{
     font-family: 'Pacifico', cursive;
-}
-
-h2{
-    font-family: 'Shadows Into Light', cursive;
-}
-.container {
+  }
+  h2{
+    font-family: 'Shadows Into' , cursive;
+  }
+  .taskText, .taskDate {
+    display: block;
+  }
+  .container {
     width: 50%;
     margin: 0 auto;
-}
-
-.inputSection {
+  }
+  .inputSection {
     border: solid 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: blueviolet;
     justify-content: space-around;
-}
-
-#inputTask {
+  }
+  #inputTask {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-}
-
-#task {
+  }
+  #task {
     flex: 10;
     padding: 10px;
     font-size: 16px;
-}
-
-#submit {
+  }
+  #submit {
     flex: 2;
     padding: 10px;
     font-size: 16px;
     background-color: aqua;
-}
-
-#submit:hover {
+  }
+  #submit:hover {
     background-color: coral;
-}
-
-/* This section controls the style for  */
-
-.listSection {
+  }
+  /* This section controls the style for  */
+  .listSection {
     width: 100%;
     overflow: auto;
-}
-
-#listContainer {
+  }
+  #listContainer {
     padding: 0;
     margin: 0;
-}
-
-.listItems {
+    /* flex:; */
+  }
+  .listItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color: rgba(2, 199, 170, .5);
     list-style: none;
     padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
     opacity: 1;
     margin: 0;
     overflow: auto;
-    flex-wrap: wrap;
     font-family: 'Merienda', cursive;
-}
-
-
-.listItems:hover {
+  }
+  .listItems:hover {
     background-color: lightgrey;
-}
-
-
-.checkbox {
+  }
+  .checkbox {
     width: 25px;
     height: 25px;
     border: solid 2px black;
-}
-
-.checkbox:hover {
+    justify-self: end;
+    margin: 10px;
+  }
+  .checkbox:hover {
     background-color: crimson;
-}
-
-.checkAppear {
+  }
+  .checkAppear {
     background-image: url('download.png');
     background-size: cover;
-}
-
-.strike {
+  }
+  .strike {
     text-decoration: line-through;
-}
-
-.fadeL {
+  }
+  .fadeL {
     animation: fadeZip 2s forwards;
-}
-
-@keyframes fadeLeft {
+  }
+  @keyframes fadeLeft {
     from {
         opacity: 1;
         left: 0%;
@@ -202,9 +184,9 @@ h2{
         opacity: 0;
         background-color: white;
     }
-}
-
-@keyframes fadeZip {
+  }
+  
+  @keyframes fadeZip {
     from {
         opacity: 1;
         left: 0%;
@@ -216,9 +198,9 @@ h2{
         opacity: 0;
         background-color: white;
     }
-}
+  }
 
-@keyframes fadeUp {
+  @keyframes fadeUp {
     from {
         opacity: 1;
         top: 0%;
@@ -228,9 +210,9 @@ h2{
         opacity: 0;
         background-color: white;
     }
-}
+  }
 
-@keyframes fadeDown {
+  @keyframes fadeDown {
     from {
         opacity: 1;
         top: 0%;
@@ -240,7 +222,7 @@ h2{
         opacity: 0;
         background-color: white;
     }
-}
+  }
 ```
 
 # JS
