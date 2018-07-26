@@ -266,6 +266,21 @@ body {
 // #2
 submitButton.addEventListener('click', ............);
 
+//copy and paste and add to function
+//  if (checkStorage()) {
+//    taskArr = JSON.parse(localStorage.getItem('masterList'));
+//    addExisitingTask(taskArr);
+//  }
+
+// function checkStorage() {
+//   if (typeof Storage !== 'undefined') {
+//     if (localStorage.getItem('masterList')) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
 ```
 # STEP 2
 
@@ -273,7 +288,7 @@ submitButton.addEventListener('click', ............);
 
 # 🚨 CHALLENGE 🚨
 
-1.  Spend the next 5-10min doing the task below.
+1.  Spend the next 10-15min doing the task below.
 2.  CREATE AN FUNCTION CALLED inputHandler. 
 3.  INSIDE THAT FUNCTION DECLARE A VARIABLE NAMED taskInput AND USE document.getElementById TO GET THE TASK    ELEMENT.
 4.   NOW LET'S USE AN IF STATEMENT TO CHECK IF OUR TASK INPUT ACTUALLY HAS TEXT.
@@ -297,63 +312,7 @@ if(................){
 }
 ```
 
-# STEP 3
 
-1.  Now What Good is a TODO List If we can't add any items to it. We will use some of the skils we learned this past week and we will have to do a little research. let's google `how to create an element in HTML`. 
-
-# 🚨 CHALLENGE 🚨
-
-1.  Spend the next 15-20min doing the task below.
-2.  CREATE AN FUNCTION CALLED createNewTask with the arguement `task`.
-3.  CREATE A VARIABLE NAMED `listContainer` and use `document.getElementById`
-4.  CREATE A VARIABLE NAMED `listItem` and store a `li` tag.
-5.  CREATE A VARIABLE NAMED `checkBox` and store a `span` tag.
-6.  Add The Class checkbox to the `to the Variable checkbox`.
-7.  Add The Class listItem to the `to the Variable listItem`.
-
-
-
-```javascript
-/*
-* STEP 3
-*/
-
-//  Spend the next 15-20min doing the task below.
-//  CREATE AN FUNCTION CALLED createNewTask with the arguement `task`.
-//  CREATE A VARIABLE NAMED listContainer and use document.getElementById
-//  CREATE A VARIABLE NAMED listItem and store a li tag.
-//  CREATE A VARIABLE NAMED checkBox and store a span tag.
-//  Add The Class checkbox to the `to the Variable checkbox`.
-//  Add The Class listItem to the `to the Variable listItem`.
-
-
-function createNewTask (...............){
-    //Dont Touch
-    let dateObj = new Date()
-    let currentDate = `${dateObj.getMonth()+1}/${dateObj.getDate()}/${dateObj.getFullYear()}`
-    //
-
-
-    let listContainer = document.getElementById(........);
-    let listItem 
-    let checkBox 
-
-    //Dont Touch    
-    let currentTask = task.value.trim()
-    //
-
-    checkBox.classList.add(..........);
-    listItems.classList.add(...........);
-
-    paragraph.innerHTML = `${currentTask} <br> ${currentDate}`
-    listItems.append(paragraph);
-    listItems.append(checkBox);
-    listContainer.append(listItems);
-    //checkBoxButton(checkBox,listItems);
-    //task.value="";
-}
-
-```
 
 
 
