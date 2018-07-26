@@ -333,6 +333,10 @@ button:hover {
 2.  `Invoke` the `createBoard` function.
 
 ```javascript
+/*
+* STEP 1
+*/
+
 // #1
 const app = document.getElementById("...............");
 const status = document.getElementById("...............");
@@ -373,6 +377,10 @@ reset.addEventListener("click", () => window.location.reload());
 ```
 
 ```javascript
+/*
+* STEP 2
+*/
+
 // CREATE AN ARRAY NAMED cards AND INSERT OBJECTS INTO OUR ARRAY
 ```
 
@@ -382,6 +390,10 @@ reset.addEventListener("click", () => window.location.reload());
 2.  In order to play our game, we need to duplicate our array. In other words, we are making an exact copy of the array above to form pairs of `objects`.
 
 ```javascript
+/*
+* STEP 3
+*/
+
 const dupCards = cards.map(c => c).concat(cards);
 ```
 
@@ -397,6 +409,10 @@ const dupCards = cards.map(c => c).concat(cards);
 4.  Declare a variable named `timer` and set it equal to (a Number) how long you want your game to be.
 
 ```javascript
+/*
+* STEP 4
+*/
+
 // #1
 .........
 
@@ -421,6 +437,10 @@ const dupCards = cards.map(c => c).concat(cards);
     - How do we use this variable? We need to use this variable to access a random index in our array.
 
 ```javascript
+/*
+* STEP 5
+*/
+
 function randomColor(arr) {
   const random = Math.floor(Math.random() * arr.length);
 
@@ -434,6 +454,10 @@ function randomColor(arr) {
 1.  This function is responsible for shuffling the `cards` array we created above.
 
 ```javascript
+/*
+* STEP 6
+*/
+
 /*
 * Fisher-Yates Algorithm 
 * Source: https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
@@ -474,6 +498,10 @@ function shuffle(array) {
 3.  Lastly, `invoke` the `randomColor` function and pass the `colors` array as an `argument`.
 
 ```javascript
+/*
+* STEP 7
+*/
+
 function gameTimer() {
   window.myMatchingGameInterval = setInterval(() => {
     // #1
@@ -533,6 +561,10 @@ function gameTimer() {
     - **HINT:** `selectedCards = [];`
 
 ```javascript
+/*
+* STEP 8
+*/
+
 function checkForMatch() {
   // #1
   if(...................................){
@@ -578,6 +610,10 @@ function checkForMatch() {
 2.  The element we are updating in this example is our `<div>` with an id of `score`.
 
 ```javascript
+/*
+* STEP 9
+*/
+
 function updateClass(newClass, oldClass) {
   scoreDiv.classList.remove(oldClass);
   scoreDiv.classList.add(newClass);
@@ -590,6 +626,10 @@ function updateClass(newClass, oldClass) {
 2.  In this function we are looping through our cards array and flipping our cards back by removing the `is-flipped` class.
 
 ```javascript
+/*
+* STEP 10
+*/
+
 function flipBack(cards) {
   cards.forEach(({ element }) =>
     setTimeout(
@@ -612,6 +652,10 @@ function flipBack(cards) {
 3.  `Invoke` the `flipBack` function and pass in `selectedCards` as an `argument`.
 
 ```javascript
+/*
+* STEP 11
+*/
+
 function flipCard() {
 
   // DON'T TOUCH BELOW
@@ -658,6 +702,10 @@ function flipCard() {
 2.  Give our users some feedback! Here we will give our users affirming that the game is over!
 
 ```javascript
+/*
+* STEP 12
+*/
+
 function gameOver(){
   const chosen = [...document.querySelectorAll('.match')];
 
@@ -693,6 +741,10 @@ function gameOver(){
 3.  The value between the `" "` will be the image on the back of your card.
 
 ```javascript
+/*
+* STEP 13
+*/
+
 function createBoard() {
   startBTN.style.display = "none";
   desc.style.display = "none";
