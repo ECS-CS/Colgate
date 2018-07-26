@@ -82,7 +82,7 @@ const colors = [
 ];
 
 // TIMER
-let timer = 60;
+let timer = 10;
 
 function randomBGC(arr) {
   const random = Math.floor(Math.random() * arr.length);
@@ -114,25 +114,26 @@ function gameTimer(){
       timer--;
       time.textContent = `${timer} seconds left`;
       if(timer === 0){
-        clearInterval(window.myMatchingGameInterval);
         // GAMEOVER
-        const images = [...document.body.querySelectorAll('.scene')];
-        images.forEach(image => {
-          image.removeEventListener('click', flipCard);
-          image.classList.add('fade');
-          setTimeout(() => image.remove(), 2000);
-        });
-        status.textContent = '';
 
         // REMOVE
         scoreTime.remove();
         status.remove();
         scoreDiv.remove();
 
+        clearInterval(window.myMatchingGameInterval);
+
+        const images = [...document.body.querySelectorAll('.scene')].forEach(image => {
+          image.removeEventListener('click', flipCard);
+          image.classList.add('fade');
+          setTimeout(() => image.remove(), 2000);
+        });
+        status.textContent = '';
+
         setTimeout(() => { 
           gameoverDiv.style.display = 'block';
           finalScore.textContent = score; 
-        }, 500);
+        }, 0);
       } else if(timer % 10 === 0){
         document.body.style.background = randomBGC(colors);
       }

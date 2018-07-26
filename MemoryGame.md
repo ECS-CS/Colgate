@@ -64,18 +64,26 @@ The structure of our webpage.
 
 Here's my code below. Spend some time making my code, yours! **REMEMBER**, CSS gives us the power to transform plain HTML elements and make them look unique. I know there are CSS attributes below we haven't learned, but it doesn't hurt to change a value to see what happens! Explore for the next 20 minutes, make changes!
 
-**Great Resource:** https://www.w3schools.com/css/default.asp
+**Great Resources:**
 
-**Hints for making this CSS yours!:**
+1.  Discover new CSS attributes: https://www.w3schools.com/css/default.asp
+2.  Not sure if your color exists? Use a HEX code instead: https://www.w3schools.com/colors/colors_picker.asp
+
+**Suggestions for making this CSS yours!:**
 
 - Change Font Colors
 - Change Background Colors
+- Change Button Colors
+- Change Card Sizes
+- Change the Gameover screen
 - Maybe add a background image to our webpage?
 - Change Font Sizes
+- Change the Font Family
 - Change Border Colors
 - Change Border Sizes
 - Change Border Styles
-- Change Anything else... if you don't know how to change something, please ASK US!
+- Change Anything else! If you don't know how to change something, please ASK US! **We got you.**
+- If you are uncertain about changing an attribute, ask us first!
 
 ```css
 body {
@@ -313,10 +321,12 @@ I PROVIDED COMMENTS TO GUIDE YOU THROUGH THE LESSON. MAKE SURE YOU READ ALL THE 
 2.  The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.
 3.  Every element in a document: the document as a whole, the head, tables within the document, table headers, text within the table cells—is part of the document object model for that document, so they can all be accessed and manipulated using the DOM and a scripting language like JavaScript.
 
+**DEMO:** https://www.nytimes.com/
+
 # STEP 1
 
 1.  In the example below, we are selecting various HTML elements.
-2.  The DOM exposes several methods "functions" that allow us to grab elements. For example: `getElementById` will get a HTML element by it's `id`. Likewise, `querySelector` allows us to select elements by `class` or `id`.
+2.  The DOM exposes several methods that allow us to grab elements. For example: `getElementById` will get a HTML element by it's `id`. Likewise, `querySelector` allows us to select elements by `class` or `id`.
 
 # 🚨 CHALLENGE 🚨
 
@@ -334,14 +344,11 @@ const gameoverDiv = document.getElementById("...............");
 const startBTN = document.getElementById("...............");
 const reset = document.getElementById("...............");
 
-// DO NOT TOUCH
-const finalScore = document.querySelector(".finalScore");
-
 // INVOKE THE createBoard() FUNCTION
 startBTN.addEventListener("click", () => ..............);
 
-
-
+// DO NOT TOUCH
+const finalScore = document.querySelector(".finalScore");
 reset.addEventListener("click", () => window.location.reload());
 ```
 
@@ -383,8 +390,8 @@ const dupCards = cards.map(c => c).concat(cards);
 1.  We are defining an array named `selectedCards` which will store the cards our user clicks on.
 2.  We also need a variable to store our score, so we define a variable named `score` and set it equal to 0, because our score starts off at zero.
 3.  The `colors` array manages the colors for the background of our page. Not a necessary component but it gives our game some flare.
-    - Spend the next 5-10 minutes and add/remove colors from this array. You can use hex values as well. Checkout: https://www.w3schools.com/colors/colors_picker.asp, to find the HEX values for other colors.
-4.  Lastly, the `timer` variable will store how long our game is. In this example, our game will last 60 seconds. You may change this value if you want a longer or shorter game.
+    - Spend the next 5 minutes adding colors to this array. You can use hex values as well. Checkout: https://www.w3schools.com/colors/colors_picker.asp, to find the HEX values for other colors.
+4.  Lastly, the `timer` variable will store how long our game is.
 
 ```javascript
 // DECLARE AN EMPTY ARRAY NAMED selectedCards
