@@ -38,6 +38,14 @@ The structure of our webpage.
   <div id="info">
     <h1>Memory Game</h1>
     <button id="start">Start Game</button>
+    <div id="gameover">
+      <h1 class="gameover">Gameover!</h1>
+      <p class="tryAgain">You ended with a score of
+        <span class="finalScore"></span>.
+        <br>
+        <button id="reset">New Game</button>
+      </p>
+    </div>
     <div id="scoreTime">
       <div id="score"></div>
       <div id="time"></div>
@@ -47,14 +55,6 @@ The structure of our webpage.
       <br> As the name implies, participants need to find a match for a picture.</div>
   </div>
   <div id="app"></div>
-  <div id="gameover">
-    <h1 class="gameover">Gameover!</h1>
-    <p class="tryAgain">You ended with a score of
-      <span class="finalScore"></span>.
-      <br>
-      <button id="reset">New Game</button>
-    </p>
-  </div>
 </body>
 
 </html>
@@ -315,6 +315,8 @@ I PROVIDED COMMENTS TO GUIDE YOU THROUGH THE LESSON. MAKE SURE YOU READ ALL THE 
 
 **UNDERNEATH THE COMMENTS YOU INSERT YOUR CODE. WE WILL GO OVER IT AS A CLASS.**
 
+**YOU WILL WRITE CODE WHEREVER YOU SEE `.........`**
+
 # THE DOM
 
 1.  **Document Object Model (DOM)**
@@ -331,6 +333,7 @@ I PROVIDED COMMENTS TO GUIDE YOU THROUGH THE LESSON. MAKE SURE YOU READ ALL THE 
 # 🚨 CHALLENGE 🚨
 
 1.  Inside the `()` for `getElementById` we need to grab our HTML elements. The `variable` names should indicate which elements we want to grab. If you have to, checkout your HTML structure to find the correct `id`'s for our elements.
+    - Remove the **...............** and insert the appropriate values.
 
 ```javascript
 // INSIDE THE PARENTHESIS PUT THE ID OF THE ELEMENT WE ARE TARGETTING
@@ -395,15 +398,19 @@ const dupCards = cards.map(c => c).concat(cards);
 
 ```javascript
 // DECLARE AN EMPTY ARRAY NAMED selectedCards
+.........
 
 // DECLARE A VARIABLE NAMED score
 // SET IT EQUAL TO 0
+.........
 
 // DECLARE AN ARRAY NAMED colors
 // INSERT COLORS AS STRINGS INTO THIS ARRAY
+.........
 
 // DECLARE A VARIABLE NAMED timer
 // SET IT EQUAL TO HOW LONG YOU WANT YOUR GAME TO BE (JUST A NUMBER)
+.........
 ```
 
 # STEP 5
@@ -413,12 +420,14 @@ const dupCards = cards.map(c => c).concat(cards);
 # 🚨 CHALLENGE 🚨
 
 1.  Below we created a random number and store it in a variable named `random`.
-2.  How do we use this variable? We need to use this variable to access an element in our array.
+2.  How do we use this variable? We need to use this variable to access a random index in our array.
 
 ```javascript
-function randomBGC(arr) {
+function randomColor(arr) {
   const random = Math.floor(Math.random() * arr.length);
-  return arr;
+
+  // ADJUST THIS RETURN STATEMENT
+  // RETURN THE PASSED IN ARRAY WITH THE RANDOM INDEX
 }
 ```
 
@@ -464,6 +473,7 @@ function shuffle(array) {
 function gameTimer() {
   window.myMatchingGameInterval = setInterval(() => {
     // DECREMENT timer by 1
+    .........
 
     time.textContent = `${timer} seconds left`;
 
@@ -472,15 +482,14 @@ function gameTimer() {
       status.textContent = "";
       clearInterval(window.myMatchingGameInterval);
 
-      // GAMEOVER
-      const images = [...document.body.querySelectorAll(".scene")];
-      images.forEach(image => {
+      // DO NOT TOUCH
+      [...document.body.querySelectorAll(".scene")].forEach(image => {
         image.removeEventListener("click", flipCard);
         image.classList.add("fade");
         setTimeout(() => image.remove(), 2000);
       });
 
-      // REMOVE
+      // DO NOT TOUCH
       scoreTime.remove();
       status.remove();
       scoreDiv.remove();
@@ -490,7 +499,7 @@ function gameTimer() {
         finalScore.textContent = score;
       }, 500);
     } else if (timer % 10 === 0) {
-      document.body.style.background = randomBGC(colors);
+      document.body.style.background = randomColor(colors);
     }
   }, 1000);
 }
@@ -513,7 +522,7 @@ function checkForMatch() {
   // IF THE CARDS MATCH
   if(...................................){
     // INCREMENT SCORE VARIABLE BY 1
-
+    .........
 
     // ON THIS LINE WE ARE UPDATING THE STATUS OF OUR PROGRAM
     // WHATEVER WE STORE INSIDE OUR QUOTES WILL TELL OUR USER HOW HE/SHE IS DOING
@@ -526,11 +535,8 @@ function checkForMatch() {
       setTimeout(() => card.element.classList.add('fade'), 300);
     });
   } else {
-    // IF THE CARD DOESN'T MATCH
-
-
     // DECREMENT SCORE VARIABLE
-
+    .........
 
     // ON THIS LINE WE ARE UPDATING THE STATUS OF OUR PROGRAM
     // WHATEVER WE STORE INSIDE OUR QUOTES WILL TELL OUR USER HOW HE/SHE IS DOING
@@ -542,10 +548,12 @@ function checkForMatch() {
   }
 
   // INVOKE OUR gameOver FUNCTION
+  .........
 
 
   // RESET OUR selectedCards ARRAY
   // HOW DO WE ERASE THE VALUES?
+  .........
 
 
   // DON'T TOUCH BELOW
@@ -614,6 +622,7 @@ function flipCard() {
       status.textContent = "Can't choose the same card twice! Try again!";
 
       // INVOKE OUR flipBack FUNCTION AND ADD selectedCards AS AN ARGUMENT
+      .........
 
 
       // DON'T TOUCH BELOW
@@ -642,7 +651,6 @@ function gameOver(){
 
     // ON THIS LINE WE ARE UPDATING THE STATUS OF OUR PROGRAM
     // WHATEVER WE STORE INSIDE OUR QUOTES WILL TELL OUR USER HOW HE/SHE IS DOING
-
     status.textContent = '';
 
     // DON'T TOUCH BELOW
@@ -676,13 +684,13 @@ function createBoard() {
   setTimeout(() => gameTimer(), 4000);
 
   return shuffle(dupCards).forEach((card, idx) => {
-    // AN EXAMPLE OF HOW TO USE createElement TO CREATE AN <img>
+    // AN EXAMPLE OF HOW TO USE createElement TO CREATE AN 'img'
     const imgFront = document.createElement("img");
 
-    // USING createElement, create an <img>
+    // USING createElement, create an 'img'
     const imgBack = document.createElement();
 
-    // USING createElement, create a <div> for each variable.
+    // USING createElement, create a 'div' for each variable.
     const scene = document.createElement();
     const cardDiv = document.createElement();
     const cardFace = document.createElement();
@@ -707,7 +715,7 @@ function createBoard() {
     setTimeout(() => {
       imgFront.setAttribute(
         "src",
-        // THIS VALUE IS THE BACK OF OUR CARD
+        // THIS VALUE IS THE BACK OF YOUR CARD
         // INSERT YOUR OWN IMAGE BETWEEN THE QUOTES
         ""
       );
