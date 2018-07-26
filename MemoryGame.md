@@ -110,7 +110,7 @@ h1 {
   border: 10px dashed #f44336;
   background-color: white;
   width: 50%;
-  margin: 20px auto;
+  margin: 0 auto;
   transition: 0.4s;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -307,15 +307,11 @@ button:hover {
 
 **FULL DISCLOSURE:** There are pieces of code you won't understand. Truthfully, explaining everything at this point may make you more confused. So you will touch the important topics. 🤦🏾‍ 🤬 😶 🤓 😢 😎 🙈 💀
 
-I PROVIDED COMMENTS TO GUIDE YOU THROUGH THE LESSON. MAKE SURE YOU READ ALL THE COMMENTS TO UNDERSTAND WHAT YOU NEED TO DO.
-
 **OBSERVE THE COMMENTS. WHENEVER YOU SEE A LINE WITH `//` PRECEDING, IS CONSIDERED A COMMENT. THESE LINES ARE SKIPPED WHEN OUR CODE COMPILES.**
 
-**THESE STEPS NEED TO BE FOLLOWED IN ORDER. EVERYTHING WE PASTE INTO THE `JS` SECTION IN CODEPEN MUST BE PASTED IN ORDER UNDERNEATH EACH OTHER.**
-
-**UNDERNEATH THE COMMENTS YOU INSERT YOUR CODE. WE WILL GO OVER IT AS A CLASS.**
-
 **YOU WILL WRITE CODE WHEREVER YOU SEE `.........`**
+
+**THESE STEPS NEED TO BE FOLLOWED IN ORDER. EVERYTHING WE PASTE INTO THE `JS` SECTION IN CODEPEN MUST BE PASTED IN ORDER UNDERNEATH EACH OTHER.**
 
 # THE DOM
 
@@ -334,9 +330,10 @@ I PROVIDED COMMENTS TO GUIDE YOU THROUGH THE LESSON. MAKE SURE YOU READ ALL THE 
 
 1.  Inside the `()` for `getElementById` we need to grab our HTML elements. The `variable` names should indicate which elements we want to grab. If you have to, checkout your HTML structure to find the correct `id`'s for our elements.
     - Remove the **...............** and insert the appropriate values.
+2.  `Invoke` the `createBoard` function.
 
 ```javascript
-// INSIDE THE PARENTHESIS PUT THE ID OF THE ELEMENT WE ARE TARGETTING
+// #1
 const app = document.getElementById("...............");
 const status = document.getElementById("...............");
 const desc = document.getElementById("...............");
@@ -347,7 +344,7 @@ const gameoverDiv = document.getElementById("...............");
 const startBTN = document.getElementById("...............");
 const reset = document.getElementById("...............");
 
-// INVOKE THE createBoard() FUNCTION
+// #2
 startBTN.addEventListener("click", () => ..............);
 
 // DO NOT TOUCH
@@ -359,11 +356,11 @@ reset.addEventListener("click", () => window.location.reload());
 
 1.  As we learned yesterday, we are creating an `array` that will store our cards.
 2.  An object is another example of a `datatype`. Objects store collections of data, in `key/value pairs`. Most of the time, the data is related, but it doesn't have to be.
-    - In our example, the objects, have a `key` of `match` and `src`, and our values are `''` and the links to our images.
+    - In our example, the objects, have a `key` of `match` and `src`, and our values are `' '` and the links to our images.
 
 # 🚨 CHALLENGE 🚨
 
-1.  Spend the next 5-15 minutes finding images on the internet. Remember you are copying the `image address` **NOT** the `link address`. Once you find your image, you will **PASTE** the link inside the `""` for the `src` key.
+1.  Spend the next 5-15 minutes finding images on the internet. Remember you are copying the `image address` **NOT** the `link address`. Once you find your image, you will **PASTE** the link inside the `" "` for the `src` key.
 2.  Regarding the `value` for the `match` key, use a one word description of your image. **REMEMBER** these values must be **UNIQUE**.
 3.  **REMEMBER:** Elements inside of an array are separated by commas.
 4.  Our objects will have this shape:
@@ -390,44 +387,45 @@ const dupCards = cards.map(c => c).concat(cards);
 
 # STEP 4: VARIABLES
 
-1.  We are defining an array named `selectedCards` which will store the cards our user clicks on.
-2.  We also need a variable to store our score, so we define a variable named `score` and set it equal to 0, because our score starts off at zero.
-3.  The `colors` array manages the colors for the background of our page. Not a necessary component but it gives our game some flare.
-    - Spend the next 5 minutes adding colors to this array. You can use hex values as well. Checkout: https://www.w3schools.com/colors/colors_picker.asp, to find the HEX values for other colors.
-4.  Lastly, the `timer` variable will store how long our game is.
+# 🚨 CHALLENGE 🚨
+
+1.  Declare an empty array named `selectedCards`.
+2.  Declare a variable named `score` and assign `0` to it.
+3.  Declare an array named `colors` and insert `Strings` with color names or HEX values.
+    - The `colors` array manages the colors for the background of our page. Not a necessary component but it gives our game some flare.
+      - Spend the next 5 minutes adding colors to this array. You can use hex values as well. Checkout: https://www.w3schools.com/colors/colors_picker.asp, to find the HEX values for other colors.
+4.  Declare a variable named `timer` and set it equal to (a Number) how long you want your game to be.
 
 ```javascript
-// DECLARE AN EMPTY ARRAY NAMED selectedCards
+// #1
 .........
 
-// DECLARE A VARIABLE NAMED score
-// SET IT EQUAL TO 0
+// #2
 .........
 
-// DECLARE AN ARRAY NAMED colors
-// INSERT COLORS AS STRINGS INTO THIS ARRAY
+// #3
 .........
 
-// DECLARE A VARIABLE NAMED timer
-// SET IT EQUAL TO HOW LONG YOU WANT YOUR GAME TO BE (JUST A NUMBER)
+// #4
 .........
 ```
 
 # STEP 5
 
 1.  A helper function responsible for choosing a random color from the `colors` array we defined above.
+2.  Below we created a random number and store it in a variable named `random`.
 
 # 🚨 CHALLENGE 🚨
 
-1.  Below we created a random number and store it in a variable named `random`.
-2.  How do we use this variable? We need to use this variable to access a random index in our array.
+1.  Return the `arr` from our parameters and access a random index from that array.
+    - How do we use this variable? We need to use this variable to access a random index in our array.
 
 ```javascript
 function randomColor(arr) {
   const random = Math.floor(Math.random() * arr.length);
 
-  // ADJUST THIS RETURN STATEMENT
-  // RETURN THE PASSED IN ARRAY WITH THE RANDOM INDEX
+  // #1
+  ..............
 }
 ```
 
@@ -469,15 +467,21 @@ function shuffle(array) {
     - in the `else if` statement, I am using the `modulus` operator to change the background colors, by checking for values that return no remainder.
 3.  When the game ends, I remove all the cards from the screen and remove other HTML elements as well.
 
+# 🚨 CHALLENGE 🚨
+
+1.  Decrement the `timer` variable you declared above by 1.
+2.  User the `timer` variable you declared above to check if its equal to 0.
+3.  Lastly, `invoke` the `randomColor` function and pass the `colors` array as an `argument`.
+
 ```javascript
 function gameTimer() {
   window.myMatchingGameInterval = setInterval(() => {
-    // DECREMENT timer by 1
+    // #1
     .........
 
     time.textContent = `${timer} seconds left`;
 
-    // USE THE timer VARIABLE AND CHECK IF ITS EQUAL TO 0
+    // #2
     if (..........) {
       status.textContent = "";
       clearInterval(window.myMatchingGameInterval);
@@ -494,12 +498,16 @@ function gameTimer() {
       status.remove();
       scoreDiv.remove();
 
+      // DO NOT TOUCH
       setTimeout(() => {
         gameoverDiv.style.display = "block";
         finalScore.textContent = score;
       }, 500);
+      // DO NOT TOUCH
     } else if (timer % 10 === 0) {
-      document.body.style.background = randomColor(colors);
+
+      // #3
+      document.body.style.background = ............;
     }
   }, 1000);
 }
@@ -516,16 +524,23 @@ function gameTimer() {
       - HINT: We are going to use the `selectedCards` array to compare the first 2 indexes.
       - We are then using the `match` key to compare our values
         - **HINT:** `.card.match`
+2.  Increment `score` variable by 1.
+3.  Give our users some feedback! Here we will give our users affirming that they found a match!
+4.  Decrement `score` variable by 1.
+5.  Give our users some feedback! Here we will display a message telling our users the cards they chose were wrong.
+6.  `Invoke` the `gameOver` function.
+7.  Reset the `selectedCards` array by assigned an empty array to it.
+    - **HINT:** `selectedCards = [];`
 
 ```javascript
 function checkForMatch() {
-  // IF THE CARDS MATCH
+  // #1
   if(...................................){
-    // INCREMENT SCORE VARIABLE BY 1
+
+    // #2
     .........
 
-    // ON THIS LINE WE ARE UPDATING THE STATUS OF OUR PROGRAM
-    // WHATEVER WE STORE INSIDE OUR QUOTES WILL TELL OUR USER HOW HE/SHE IS DOING
+    // #3
     status.textContent = '';
 
     // DON'T TOUCH BELOW
@@ -535,11 +550,10 @@ function checkForMatch() {
       setTimeout(() => card.element.classList.add('fade'), 300);
     });
   } else {
-    // DECREMENT SCORE VARIABLE
+    // #4
     .........
 
-    // ON THIS LINE WE ARE UPDATING THE STATUS OF OUR PROGRAM
-    // WHATEVER WE STORE INSIDE OUR QUOTES WILL TELL OUR USER HOW HE/SHE IS DOING
+    // #5
     status.textContent = '';
 
     // DON'T TOUCH BELOW
@@ -547,14 +561,11 @@ function checkForMatch() {
     flipBack(selectedCards);
   }
 
-  // INVOKE OUR gameOver FUNCTION
+  // #6
   .........
 
-
-  // RESET OUR selectedCards ARRAY
-  // HOW DO WE ERASE THE VALUES?
+  // #7
   .........
-
 
   // DON'T TOUCH BELOW
   scoreDiv.textContent = score;
@@ -595,7 +606,8 @@ function flipBack(cards) {
 
 # 🚨 CHALLENGE 🚨
 
-1.  Inside our `if statement` we need to create a condition: create a condition that uses the `selectedCards` array. Inside the `()` check that the length of the array is equal to 2.
+1.  Inside our `if statement` we need to create a condition: that uses the `selectedCards` array. Inside the `()` check that the length of the array is equal to 2.
+2.  `Invoke` the `flipBack` function and pass in `selectedCards` as an `argument`.
 
 ```javascript
 function flipCard() {
@@ -610,7 +622,7 @@ function flipCard() {
     .setAttribute("src", dupCards[index].src);
   selectedCards.push({ card: dupCards[index], element: card });
 
-  // CHECK THAT THE LENGTH OF THE ARRAY IS EQUAL TO 2
+  // #1
   if (...............) {
 
     // DON'T TOUCH BELOW
@@ -621,9 +633,8 @@ function flipCard() {
       // DON'T TOUCH BELOW
       status.textContent = "Can't choose the same card twice! Try again!";
 
-      // INVOKE OUR flipBack FUNCTION AND ADD selectedCards AS AN ARGUMENT
+      // #2
       .........
-
 
       // DON'T TOUCH BELOW
       selectedCards = [];
@@ -634,29 +645,31 @@ function flipCard() {
 
 # STEP 12
 
-1.  In `Step 8` this is the function we invoked.
+1.  In `Step 8` this is the function we `invoked`.
 2.  Notice we are using an `if statement` to determine when our game is over.
 
 # 🚨 CHALLENGE 🚨
 
 1.  Develop a condition that compares the length of our arrays. The arrays in question are `chosen` and `dupCards`.
-    - **HINT:** What properties on array can we use to get the lengths. Use this in your comparison.
+    - **HINT:** What properties on arrays can we use to get the lengths. Use this in your comparison.
+2.  Give our users some feedback! Here we will give our users affirming that the game is over!
 
 ```javascript
 function gameOver(){
   const chosen = [...document.querySelectorAll('.match')];
 
-  // COMPARE THE LENGTHS OF THE chosen AND dupCards ARRAY
+  // #1
   if(..................){
 
-    // ON THIS LINE WE ARE UPDATING THE STATUS OF OUR PROGRAM
-    // WHATEVER WE STORE INSIDE OUR QUOTES WILL TELL OUR USER HOW HE/SHE IS DOING
+    // #2
     status.textContent = '';
 
     // DON'T TOUCH BELOW
     time.textContent = '';
     clearInterval(window.myMatchingGameInterval);
     setTimeout(() => chosen.forEach(image => image.remove()), 2000);
+
+    // DON'T TOUCH BELOW
     setTimeout(() => {
       gameoverDiv.style.display = 'block';
       finalScore.textContent = score;
@@ -672,7 +685,9 @@ function gameOver(){
 
 # 🚨 CHALLENGE 🚨
 
-1.  Create the remaining 5 elements. Read the comments to assist you.
+1.  Create the an `img` tag.
+2.  Create 4 `div` tags.
+3.  The value between the `" "` will be the image on the back of your card.
 
 ```javascript
 function createBoard() {
@@ -687,10 +702,10 @@ function createBoard() {
     // AN EXAMPLE OF HOW TO USE createElement TO CREATE AN 'img'
     const imgFront = document.createElement("img");
 
-    // USING createElement, create an 'img'
+    // #1
     const imgBack = document.createElement();
 
-    // USING createElement, create a 'div' for each variable.
+    // #2
     const scene = document.createElement();
     const cardDiv = document.createElement();
     const cardFace = document.createElement();
@@ -715,8 +730,7 @@ function createBoard() {
     setTimeout(() => {
       imgFront.setAttribute(
         "src",
-        // THIS VALUE IS THE BACK OF YOUR CARD
-        // INSERT YOUR OWN IMAGE BETWEEN THE QUOTES
+        // #3
         ""
       );
       scene.addEventListener("click", flipCard);
