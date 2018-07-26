@@ -607,7 +607,9 @@ function flipBack(cards) {
 # 🚨 CHALLENGE 🚨
 
 1.  Inside our `if statement` we need to create a condition: that uses the `selectedCards` array. Inside the `()` check that the length of the array is equal to 2.
-2.  `Invoke` the `flipBack` function and pass in `selectedCards` as an `argument`.
+2.  At this point, we want to develop a condition that checks if our cards are `NOT` equal, because we only want this line to execute `setTimeout(() => checkForMatch(), 300);` when our cards don't match.
+    - **HINT:** We will be using the `.element` key in our comparison.
+3.  `Invoke` the `flipBack` function and pass in `selectedCards` as an `argument`.
 
 ```javascript
 function flipCard() {
@@ -625,15 +627,16 @@ function flipCard() {
   // #1
   if (...............) {
 
-    // DON'T TOUCH BELOW
-    if (selectedCards[0].element !== selectedCards[1].element) {
+    // #2
+    if (................) {
+      // DON'T TOUCH BELOW
       setTimeout(() => checkForMatch(), 300);
     } else {
 
       // DON'T TOUCH BELOW
       status.textContent = "Can't choose the same card twice! Try again!";
 
-      // #2
+      // #3
       .........
 
       // DON'T TOUCH BELOW
