@@ -382,7 +382,7 @@ function createNewTask (...............){
 
 ```
 
-# STEP 4
+# STEP 5
 
 1.  Now were at the point where we are going to add our created task to DOM/Webpage. We will introduce a new       method that will allow us to create `html`elements in javascript. 
     Take 3-5 minutes and google `how to create html elements in javascript`
@@ -476,7 +476,7 @@ function addTaskToDOM(currentTask, currentDate) {
 
 ```
 
-# STEP 5
+# STEP 6
 
 1. Now that we have our task on our list, DOES OUR CHECK BOX WORK? let's click the box, did the task delete?
    If it didn't delete, we're going to make the check box clickable.
@@ -496,7 +496,7 @@ function addTaskToDOM(currentTask, currentDate) {
 ```
 
 
-# STEP 6
+# STEP 7
 
 1. Now let's give functionality to our `deleteTask` function so we can remove items from the list.
 
@@ -533,7 +533,7 @@ function deleteTask(e, deletedTask, listItem,prevAnimation) {
 }
 ```
 
-# STEP 7
+# STEP 8
 
 1. Now what happens if you make a mistake and need to make an edit to your task? let's add a function that will allow us to edit our task.
 
@@ -565,7 +565,7 @@ function editTask(updatedTask, oldTask) {
 }
 ```
 
-# STEP 8
+# STEP 9
 
 1. Now let's add a new task did it work? Good job you have a functioning todo list 👍. Now do me a favor let's save and reload our page. did your tasks load back to your list. if it didn't, let's make it load our saved tasks.
 
@@ -585,7 +585,7 @@ function editTask(updatedTask, oldTask) {
 
 ```
 
-#STEP 9
+#STEP 10
 
 1. AT THIS POINT YOU HAVE FINISHED AND NOW HAVE A WORKING TODO LIST. NOW YOU SHOULD HAVE SOME NICE ANIMATION WHEN YOU ADD A TASK AND DELETE A TASK.
 
