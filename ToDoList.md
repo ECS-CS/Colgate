@@ -108,6 +108,9 @@ body {
     align-items: center;
     background-color: blueviolet;
     justify-content: space-around;
+    z-index: 5;
+    position: relative;
+
   }
   #inputTask {
     width: 100%;
@@ -150,6 +153,9 @@ body {
     margin: 0;
     overflow: auto;
     font-family: 'Merienda', cursive;
+    position: relative;
+    z-index: 5;
+    /* animation: fadeInRight 2s forwards; */
   }
   .listItems:hover {
     background-color: lightgrey;
@@ -171,56 +177,211 @@ body {
   .strike {
     text-decoration: line-through;
   }
-  .fadeL {
-    animation: fadeZip 2s forwards;
+  .fadeOutLeft {
+    animation: fadeOutLeft 2s forwards;
   }
-  @keyframes fadeLeft {
+
+  .fadeOutRight {
+    animation: fadeOutRight 2s forwards;
+  }
+  .fadeOutZip {
+    animation: fadeOutZip 2s forwards;
+  }
+  .fadeOutUp {
+    animation: fadeOutUp 2s forwards;
+  }
+  .fadeOutDown {
+    animation: fadeOutDown 2s forwards;
+  }
+  .fadeOutSpin {
+    animation: fadeOutSpin 2s forwards;
+  }
+  .fadeInSpin {
+    animation: fadeInSpin 2s forwards;
+  }
+  .fadeInZip {
+    animation: fadeInZip 2s forwards;
+  }
+  .fadeInUp {
+    animation: fadeInUp 2s forwards;
+  }
+  .fadeInDown {
+    animation: fadeInDown 2s forwards;
+  }
+  .fadeInLeft {
+    animation: fadeInLeft 2s forwards;
+  }
+  .fadeInRight {
+    animation: fadeInRight 2s forwards;
+  }
+
+
+
+
+
+
+  @keyframes fadeOutLeft {
     from {
         opacity: 1;
-        left: 0%;
     }
     to {
-        left: 100%;
+        transform: translateX(-100%);
         opacity: 0;
         background-color: white;
     }
   }
-  
-  @keyframes fadeZip {
+  @keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+        background-color: white;
+    }
+  }
+  @keyframes fadeOutZip {
     from {
         opacity: 1;
         left: 0%;
         width: 100%;
     }
     to {
-        width: 25%;
+        width: 0%;
         left: 50%;
         opacity: 0;
         background-color: white;
     }
   }
-
-  @keyframes fadeUp {
+  @keyframes fadeOutUp {
     from {
         opacity: 1;
-        top: 0%;
+        z-index: -1;
     }
     to {
-        top: -100%;
+        z-index: -1;
+        transform: translateY(-100%);
         opacity: 0;
         background-color: white;
     }
   }
-
-  @keyframes fadeDown {
+  @keyframes fadeOutDown {
     from {
         opacity: 1;
         top: 0%;
+        z-index: 1;
     }
     to {
-        top: 100%;
+        z-index: 1;
+        transform: translateY(100%);
         opacity: 0;
         background-color: white;
+    }
+  }
+  @keyframes fadeOutSpin{
+    from {
+        opacity: 1;
+        width: 100%;
+        z-index: 1;
+        left: 0%;
+    }
+    to {
+        z-index: 1;
+        transform: rotateZ(360deg) scale(0);
+        left: 50%;
+        opacity: 0;
+        width: 0%;
+        background-color: white;
+    }
+  }
+  @keyframes fadeInSpin{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform: rotateZ(0deg) scale(0);
+
+    }
+    to {
+        z-index: 1;
+        transform: rotateZ(360deg) scale(1);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInZip{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  scale(0);
+
+    }
+    to {
+        z-index: 1;
+        transform:  scale(1);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInUp{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  translateY(100%);
+
+    }
+    to {
+        z-index: 1;
+        transform:   translateY(0%);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInDown{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  translateY(-100%);
+
+    }
+    to {
+        z-index: 1;
+        transform:   translateY(0%);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInLeft{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  translateX(-100%);
+
+    }
+    to {
+        z-index: 1;
+        transform:   translateX(0%);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInRight{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  translateX(100%);
+
+    }
+    to {
+        z-index: 1;
+        transform:   translateX(0%);
+        opacity: 1;
+        /* width: 97%; */
     }
   }
 ```
