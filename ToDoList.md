@@ -768,12 +768,12 @@ function editTask(updatedTask, oldTask) {
           "fadeInLeft",
           "fadeInRight",
       ]
-      
+
   ```
 
 
 
-#STEP 11
+# STEP 11
 
 1. Take A look at your CSS In CodePen
 2. In Your CSS find the styles listed below and `DELETE` it from your CSS
