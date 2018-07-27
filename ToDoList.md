@@ -579,7 +579,7 @@ function createNewTask (...............){
 
 ```javascript
 /*
-* STEP 4
+* STEP 5
 */
 
 function addTaskToDOM(currentTask, currentDate) {
