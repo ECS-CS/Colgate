@@ -1,6 +1,6 @@
-# CAPSTONE PROJECT
+# CAPSTONE PROJECT DEVELOPMENT
 
-### DEMO: https://codepen.io/GainorB/full/yqXNYx/
+## DEMO: https://codepen.io/GainorB/full/yqXNYx/
 
 # OBJECTIVE
 
@@ -110,7 +110,7 @@ h1 {
   border: 10px dashed #f44336;
   background-color: white;
   width: 50%;
-  margin: 0 auto;
+  margin: 20px auto;
   transition: 0.4s;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

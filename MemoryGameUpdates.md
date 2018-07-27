@@ -1,6 +1,6 @@
-# CAPSTONE PROJECT
+# CAPSTONE PROJECT UPDATES
 
-## UPDATES
+## FINAL SOURCE CODE: https://codepen.io/GainorB/pen/wxqQLZ
 
 1.  In the `gameOver` function we created in **Step 12**. We are going to add the following lines to our code... What we did here was remove the `score` and `status` from our gameOver screen. (Makes our ending page look better).
 
@@ -64,12 +64,12 @@
     setTimeout(() => {
       gameoverDiv.style.display = "block";
       finalScore.textContent = score;
-    }, 1000);
+    }, 1500);
     ```
 
 ## PRESENTATION
 
-1.  Because codePen.io doesn't allow us `window.location.reload()` (among other things), we will instead `deploy` our projects to the internet.
+1.  Because codePen.io doesn't allow us to `window.location.reload()` (among other things), we will instead `deploy` our projects to the internet.
     - What we mean by `deploy` is make our projects available on the internet.
       - Once you are totally **satisfied**, I will `deploy` your project, and give you a link you can use to access your project.
 2.  Make any more CSS changes
