@@ -254,6 +254,7 @@ body {
 
 1.  Declare a `function` and call it start `start`. Inside that function let's declare a `variable` name `submitButton` and let's fill in the `()` for the document.getElementById().
 2.  `Invoke` the `inputHandler` function.
+3. Copy if statement and paste inside of our `start` function above the variable `submitButton`
 
 ```javascript
 /*
@@ -266,20 +267,11 @@ body {
 // #2
 submitButton.addEventListener('click', ............);
 
-//copy and paste and add to function
-//  if (checkStorage()) {
-//    taskArr = JSON.parse(localStorage.getItem('masterList'));
-//    addExisitingTask(taskArr);
-//  }
-
-// function checkStorage() {
-//   if (typeof Storage !== 'undefined') {
-//     if (localStorage.getItem('masterList')) {
-//       return true;
-//     }
-//   }
-//   return false;
-// }
+//#3
+ if (checkStorage()) {
+   taskArr = JSON.parse(localStorage.getItem('masterList'));
+   addExisitingTask(taskArr);
+ }
 
 ```
 # STEP 2
@@ -311,6 +303,8 @@ if(................){
 
 }
 ```
+
+
 
 # STEP 3
 
@@ -396,9 +390,9 @@ function createNewTask (...............){
 # 🚨 CHALLENGE 🚨
   Spend the next 10-15min doing the task below.
   1. LOOK IN YOUR HTML AND LET'S FIND THE ID FOR THE listContainer variable
-     FOR `checkBox, spanTask, spanDate` LET'S USE THE `document.createElement` AND CREATE A SPAN TAG;
-     FOR `listItems` WHAT HTML TAG SHOULD WE CREATE? THINK ABOUT WHEN WE CREATE A LIST WHAT TAG DO WE USE 🤔
-     FOR `divContainer` LET'S CREATE THIS ELEMENT. HINT THE TAG WE NEED TO CREATE IS IN THE NAME OF THE VARIABLE
+     * FOR `checkBox, spanTask, spanDate` LET'S USE THE `document.createElement` AND CREATE A SPAN TAG;
+     * FOR `listItems` WHAT HTML TAG SHOULD WE CREATE? THINK ABOUT WHEN WE CREATE A LIST WHAT TAG DO WE USE 🤔
+     * FOR `divContainer` LET'S CREATE THIS ELEMENT. HINT THE TAG WE NEED TO CREATE IS IN THE NAME OF THE VARIABLE
   2. LET'S LOOKS IN `CSS` AND FIND THE `CLASS` AND LET'S ENTER THEM (..........) FOR `checkBox` AND `listItems`
   3. CREATE A VARIABLE NAMED currentDate and store the invoked getDate function
   4. LET'S ADD `spanTask` AND `spanDate` TO THE `divContainer`
@@ -486,10 +480,10 @@ function addTaskToDOM(currentTask, currentDate) {
 
 ```javascript
 
-// 1. LET'S DECLARE A FUNCTION NAMED `checkBoxButton` WITH THE PARAMETERS `checkBox, task, item`
+// 1. LET'S DECLARE A FUNCTION NAMED `checkBoxButton` WITH THE PARAMETERS `checkBox, task, item` ABOVE THE `askTaskToDom`
 
 
-// 2. LET'S ADD A CLICK EVENT TO `checkBox`. After the `click,` copy and paste `e => deleteTask(e, task, item)`.
+// 2. INSIDE YOUR `checkBoxButton` FUNCTION LET'S ADD A CLICK EVENT TO `checkBox`. After the `click,` copy and paste `e => deleteTask(e, task, item)`.
 
 ```
 
@@ -502,9 +496,9 @@ function addTaskToDOM(currentTask, currentDate) {
   Spend the next 10-15min doing the task below.
   1. COPY THE FUNCTION BELOW AND PASTE IT ABOVE THE `checkBoxButton` FUNCTION.
   2. LET'S TAKE A LOOK IN OUR CSS AND LET'S LOOK FOR THE RIGHT`class` to add in the `parentheses`.
-    `e.target.classList` WE NEED TO ADD A CLASS TO DISPLAY A CHECK.
+    `e.target.classList` WE NEED TO ADD A CLASS TO DISPLAY A `check`.
     `listItem.classList` WE NEED TO ADD A CLASS TO DISPLAY A `line-through` OUR TEXT.
-    `listItem.classList` WE NEED TO ADD A CLASS TO ADD AN ANIMATION TO FADE OUT OUR DELETED TASK.
+    `listItem.classList` WE NEED TO ADD A CLASS TO ADD AN `animtation` TO FADE OUT OUR DELETED TASK.
   3. STORE THE `newArr` VARIABLE IN THE `taskArr` VARIABLE.
   4. INVOKE THE `updateStorage` FUNCTION AND ADD `newArr` AS AN ARGUEMENT FOR THAT FUNCTION 
 
@@ -520,7 +514,7 @@ function deleteTask(e, deletedTask, listItem) {
   //3
   
   //4
-  updateStorage(newArr);
+
 
   setTimeout(() => {
     listItem.style.display = 'none';
@@ -536,6 +530,7 @@ function deleteTask(e, deletedTask, listItem) {
   Spend the next 10-15min doing the task below.
   1. COPY THE FUNCTION BELOW AND PASTE IT BELOW THE `deleteTask`.
   2. STORE THE `newArr` VARIABLE IN THE `taskArr` VARIABLE. 
+  3. INVOKE THE `updateStorage` FUNCTION AND ADD `newArr` AS AN ARGUEMENT FOR THAT FUNCTION 
 
 
 
@@ -557,13 +552,14 @@ function editTask(updatedTask, oldTask) {
     return e;
   });
   //2
-  taskArr = newArr;
-  updateStorage(newArr);
+
+  //3
+
   setTimeout(() => window.location.reload(), 300);
 }
 ```
 
-# STEP 7
+# STEP 8
 
 1. NOW LET'S ADD A NEW TASK DID IT WORK? GOOD JOB YOU HAVE A FUNCTIONING TODO LIST 👍. NOW DO ME A FAVOR LET'S SAVE AND RELOAD OUR PAGE. DID YOUR TASKS LOAD BACK TO YOUR LIST. IF IT DIDN'T, LET'S MAKE IT LOAD OUR SAVED TASKS
 
@@ -588,7 +584,7 @@ function editTask(updatedTask, oldTask) {
 
 ```
 
-#STEP 8
+#STEP 9
 
 1. AT THIS POINT YOU HAVE FINISHED AND NOW HAVE A WORKING TODO LIST. NOW YOU SHOULD HAVE SOME NICE ANIMATION WHEN YOU ADD A TASK AND DELETE A TASK.
 
