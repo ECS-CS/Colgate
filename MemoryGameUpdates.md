@@ -41,24 +41,21 @@
       border: 10px dashed #f44336;
       background-color: white;
       width: 50%;
-      ------margin: 0 auto;
-      =>margin: 20px auto;
-      ------transition: 0.4s;
+      margin: 0 auto;
+      transition: 0.4s;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     ```
 
     and let's change this value: `margin: 0 auto;` to `margin: 20px auto;`.
 
-4.  Inside the `gameTimer()` function, lets find: (we changed the 0 to 1000)
+4.  Inside the `gameTimer()` function, lets find: (we changed the **0** to **1000**)
 
     ```javascript
     setTimeout(() => {
       gameoverDiv.style.display = "block";
       finalScore.textContent = score;
-    ------
-    }, 0); => }, 1000);
-    ------
+    }, 0);
     ```
 
     **to:**
