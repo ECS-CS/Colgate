@@ -155,7 +155,6 @@ body {
     font-family: 'Merienda', cursive;
     position: relative;
     z-index: 5;
-    /* animation: fadeInRight 2s forwards; */
   }
   .listItems:hover {
     background-color: lightgrey;
@@ -214,11 +213,6 @@ body {
   .fadeInRight {
     animation: fadeInRight 2s forwards;
   }
-
-
-
-
-
 
   @keyframes fadeOutLeft {
     from {
@@ -442,8 +436,8 @@ submitButton.addEventListener('click', ............);
 # 🚨 CHALLENGE 🚨
 
 1.  Spend the next 10-15min doing the task below.
-2.  CREATE AN FUNCTION CALLED inputHandler. 
-3.  INSIDE THAT FUNCTION DECLARE A VARIABLE NAMED taskInput AND USE document.getElementById TO GET THE TASKELEMENT.
+2.  CREATE AN FUNCTION CALLED inputHandler at the `TOP` in our JS section. 
+3.  INSIDE THAT FUNCTION DECLARE A VARIABLE NAMED taskInput AND USE document.getElementById TO GET THE TASK ELEMENT.
 4.  NOW LET'S USE AN IF STATEMENT TO CHECK IF OUR TASK INPUT ACTUALLY HAS TEXT.
 5.  INSIDE YOUR IF STATEMENT INVOKE A FUNCTION NAMED createNewTask and in the parameters add the variable taskInput.
 
@@ -464,7 +458,7 @@ if(................){
 
 # STEP 3
 
-1.  We just made our button clickable and now let's go ahead and copy and paste the code below in codepen. Please paste below          after the inputHandler functions
+1.  We just made our button clickable and now let's go ahead and copy and paste the code below in codepen. Please paste AFTER the `inputHandler` functions
 
 ```javascript
 /*
@@ -508,12 +502,12 @@ function getDate() {
 
 # 🚨 CHALLENGE 🚨
   Spend the next 10-15min doing the task below.
-  1. CREATE AN FUNCTION CALLED `createNewTask` with the parameter `task`.
+  1. CREATE AN FUNCTION CALLED `createNewTask` with the parameter `task` AFTER the `function getDate(){}`.
   2. CREATE A VARIABLE NAMED `currentTask` and store the  value `task.value.trim()`
   3. CREATE A VARIABLE NAMED `currentDate` and Invoke the function `getDate()`.
   3. Invoke function `addTaskToDOM` with the parameters `taskOBJ.task , taskOBJ.date`
   5. Invoke function `saveToStorage` with the parameter `taskOBJ`
-  6. Store and empty string inside task.value
+  6. Store and empty string inside task.value.
 
 ```javascript
 /*
@@ -545,19 +539,20 @@ function createNewTask (...............){
 
 # STEP 5
 
-1.  Now were at the point where we are going to add our created task to DOM/Webpage. We will introduce a new       method that will allow us to create `html`elements in javascript. 
+1.  Now were at the point where we are going to add our created task to DOM/Webpage. We will introduce a new method that will allow us to create `html`elements in javascript. 
     Take 3-5 minutes and google `how to create html elements in javascript`
 
 # 🚨 CHALLENGE 🚨
   Spend the next 10-15min doing the task below.
-  1. LooK in your html and let's find the ID for the listContainer variable.
+  Copy AND PASTE THE FUNCTION addTaskToDOM AFTER `function createNewTask(){}`
+  1. Look in your html and let's find the ID for the listContainer variable.
      * For the following variables. LET'S USE `document.createElement()` to create `SPAN` tags
       * `checkBox`
       * `spanTask` 
       * `spanDate`
      * For the following variables. LET'S USE `document.createElement()` to create html tags
        * `listItems`
-          * `hint` what html tag should we create? think about when we create a list what tag do we use. 🤔
+          * `hint` what html tag should we create? Think about when we create a list, what tag do we use? 🤔
        * `divContainer`
           * `hint` the tag we need to create is in the name of the variable
       * For the following variable Invoke the function `randomAnimation` with the parameter `fadeInAnimations`
@@ -644,8 +639,9 @@ function addTaskToDOM(currentTask, currentDate) {
 
 # 🚨 CHALLENGE 🚨
   Spend the next 10-15min doing the task below.
-  1. Let's declare a function named `checkBoxButton` with the parameters `checkBox, task, item, oldAnimation` above the `askTaskToDom` function.
-  2. Inside your `checkBoxButton` function let's add a click event to `checkBox`. After the `click,` copy and paste `e => deleteTask(e, task, item)`.
+  1. Let's declare a function named `checkBoxButton` with the parameters `checkBox, task, item, oldAnimation` AFTER the `function  addTaskToDOM(){}`.
+  2. Inside your `checkBoxButton` function let's add a click event to `checkBox`. AFTER the `click,` copy and paste `e => deleteTask(e, task, item)`.
+
 
 
 ```javascript
@@ -663,13 +659,13 @@ function addTaskToDOM(currentTask, currentDate) {
 
 # 🚨 CHALLENGE 🚨
   Spend the next 10-15min doing the task below.
-  1. Copy the function below and paste it above the `checkBoxButton` function.
+  1. Copy the function below and paste it AFTER the `function  checkBoxButton(){}`.
   2. Let's take a look in our css and let's look for the right `class` to add in the `(.............)`.
     * `e.target.classList` We need to add a class to display a `check`.
     * `listItem.classList` We need to add a class to display a `line-through` OUR TEXT.
     * `listItem.classList` let's invoke the function `randomAnimation` with the parameter `fadeOutAnimations`
   3. STORE THE `newArr` value in the `taskArr` VARIABLE.
-  4. Invoke the `updateStorage` function and add `newArr` ss an argument for that function. 
+  4. Invoke the `updateStorage` function and add `newArr` as an argument for that function. 
 
 
 ```javascript
@@ -700,7 +696,7 @@ function deleteTask(e, deletedTask, listItem,prevAnimation) {
 
 # 🚨 CHALLENGE 🚨
   Spend the next 10-15min doing the task below.
-  1. Copy the function below and paste it below the `deleteTask` function.
+  1. Copy the function below and paste it AFTER the `function deleteTask()`.
   2. STORE THE `newArr` VARIABLE IN THE `taskArr` VARIABLE. 
   3. Invoke the `updateStorage` function and add `newArr` as an argument for that function.
 
@@ -732,7 +728,7 @@ function editTask(updatedTask, oldTask) {
 
 # 🚨 CHALLENGE 🚨
   Spend the next 10-15min doing the task below.
-  1. CREATE A FUNCTION NAMED `addExistingTask` with the parameter `data`.
+  1. CREATE A FUNCTION NAMED `addExistingTask` with the parameter `data` AFTER the `function editTask()`.
   2. INSIDE THIS FUNCTION LET'S COPY AND PASTE THIS LINE`  data.forEach(element => ........));`
   3. Where THE `.........` LET'S INVOKE THE FUNCTION `addExistingTask` with the parameter `element.task, element.date`
 
@@ -746,52 +742,307 @@ function editTask(updatedTask, oldTask) {
 
 ```
 
-#STEP 10
 
-1. AT THIS POINT YOU HAVE FINISHED AND NOW HAVE A WORKING TODO LIST. NOW YOU SHOULD HAVE SOME NICE ANIMATION WHEN YOU ADD A TASK AND DELETE A TASK.
+# STEP 10
 
-2. LET'S TAKE A LOOK IN OUR CSS THERE ARE MORE ANIMATIONS THAT WE CAN CHOOSE FROM FOR WHEN WE ADD A TASK AND WHEN WE DELETE.
+1. Now Let's scroll to the top of our JS section in Codepen.
+2. At the Very Top let's create some new lines by click return
+3. Copy and Paste This Code Below
+  ```javascript
+      let taskArr = [];
 
-    1. ADDING A TASK - IF YOU LOOK AT THE LAST STYLE IN OUR `listItems` CLASS IN `CSS` YOU WILL SEE `animation` YOU CAN EDIT THE NAME(`fadeInRight`) OF THE ANIMATION AND THE DURATION (`2s`) OF THE ANIMATION.
+      const fadeOutAnimations = [
+          "fadeOutLeft",
+          "fadeOutRight",
+          "fadeOutZip",
+          "fadeOutUp",
+          "fadeOutDown",
+          "fadeOutSpin",
+      ];
 
-    2. DELETE A TASK - IF YOU LOOK AT  OUR `fade` CLASS YOU WILL SEE `animation` YOU CAN EDIT THE NAME(`fadeOutSpin`) OF THE ANIMATION AND THE DURATION (`2s`) OF THE ANIMATION.
-    ```css
-        .listItems {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background-color: rgba(2, 199, 170, .5);
-        list-style: none;
-        padding: 10px;
+      const fadeInAnimations = [
+          "fadeInSpin",
+          "fadeInZip",
+          "fadeInUp",
+          "fadeInDown",
+          "fadeInLeft",
+          "fadeInRight",
+      ]
+      
+  ```
+
+
+
+#STEP 11
+
+1. Take A look at your CSS In CodePen
+2. In Your CSS find the styles listed below and `DELETE` it from your CSS
+
+```css
+  .fadeL {
+    animation: fadeZip 2s forwards;
+}
+
+@keyframes fadeLeft {
+    from {
         opacity: 1;
-        margin: 0;
-        overflow: auto;
-        font-family: 'Merienda', cursive;
-        position: relative;
-        z-index: 5;
-        animation: fadeInRight 2s forwards;
+        left: 0%;
     }
+    to {
+        left: 100%;
+        opacity: 0;
+        background-color: white;
+    }
+}
+
+@keyframes fadeZip {
+    from {
+        opacity: 1;
+        left: 0%;
+        width: 100%;
+    }
+    to {
+        width: 25%;
+        left: 50%;
+        opacity: 0;
+        background-color:white;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 1;
+        top: 0%;
+    }
+    to {
+        top: -100%;
+        opacity: 0;
+        background-color: white;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 1;
+        top: 0%;
+    }
+    to {
+        top: 100%;
+        opacity: 0;
+        background-color: black;
+    }
+}
 
 
-      .fade {
-         animation: fadeOutSpin 2s forwards;
-     }
+```
 
 
-    ```
-    3. HERE IS A LIST OF ANIMATIONS TO CHOOSE FROM
-        * fadeOutLeft,
-        * fadeOutRight,
-        * fadeOutZip,
-        * fadeOutUp,
-        * fadeOutDown,
-        * fadeOutSpin,
-        * fadeInSpin,
-        * fadeInZip,
-        * fadeInUp,
-        * fadeInDown,
-        * fadeInLeft,
-        * fadeInRight,
+3. After you have completed step 2 let's go ahead and Copy the `CSS` below and add it to your CSS
 
+```css
+  .fadeOutRight {
+    animation: fadeOutRight 2s forwards;
+  }
+  .fadeOutZip {
+    animation: fadeOutZip 2s forwards;
+  }
+  .fadeOutUp {
+    animation: fadeOutUp 2s forwards;
+  }
+  .fadeOutDown {
+    animation: fadeOutDown 2s forwards;
+  }
+  .fadeOutSpin {
+    animation: fadeOutSpin 2s forwards;
+  }
+  .fadeInSpin {
+    animation: fadeInSpin 2s forwards;
+  }
+  .fadeInZip {
+    animation: fadeInZip 2s forwards;
+  }
+  .fadeInUp {
+    animation: fadeInUp 2s forwards;
+  }
+  .fadeInDown {
+    animation: fadeInDown 2s forwards;
+  }
+  .fadeInLeft {
+    animation: fadeInLeft 2s forwards;
+  }
+  .fadeInRight {
+    animation: fadeInRight 2s forwards;
+  }
+
+  @keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+        background-color: white;
+    }
+  }
+  @keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+        background-color: white;
+    }
+  }
+  @keyframes fadeOutZip {
+    from {
+        opacity: 1;
+        left: 0%;
+        width: 100%;
+    }
+    to {
+        width: 0%;
+        left: 50%;
+        opacity: 0;
+        background-color: white;
+    }
+  }
+  @keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        z-index: -1;
+    }
+    to {
+        z-index: -1;
+        transform: translateY(-100%);
+        opacity: 0;
+        background-color: white;
+    }
+  }
+  @keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        top: 0%;
+        z-index: 1;
+    }
+    to {
+        z-index: 1;
+        transform: translateY(100%);
+        opacity: 0;
+        background-color: white;
+    }
+  }
+  @keyframes fadeOutSpin{
+    from {
+        opacity: 1;
+        width: 100%;
+        z-index: 1;
+        left: 0%;
+    }
+    to {
+        z-index: 1;
+        transform: rotateZ(360deg) scale(0);
+        left: 50%;
+        opacity: 0;
+        width: 0%;
+        background-color: white;
+    }
+  }
+  @keyframes fadeInSpin{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform: rotateZ(0deg) scale(0);
+
+    }
+    to {
+        z-index: 1;
+        transform: rotateZ(360deg) scale(1);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInZip{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  scale(0);
+
+    }
+    to {
+        z-index: 1;
+        transform:  scale(1);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInUp{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  translateY(100%);
+
+    }
+    to {
+        z-index: 1;
+        transform:   translateY(0%);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInDown{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  translateY(-100%);
+
+    }
+    to {
+        z-index: 1;
+        transform:   translateY(0%);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInLeft{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  translateX(-100%);
+
+    }
+    to {
+        z-index: 1;
+        transform:   translateX(0%);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+  @keyframes fadeInRight{
+    from {
+        opacity: 0;
+        /* width: 0%; */
+        z-index: 1;
+        transform:  translateX(100%);
+
+    }
+    to {
+        z-index: 1;
+        transform:   translateX(0%);
+        opacity: 1;
+        /* width: 97%; */
+    }
+  }
+
+
+```
+
+    
 
 #CONGRATULATIONS YOU'VE COMPLETED TO DO LIST
 
