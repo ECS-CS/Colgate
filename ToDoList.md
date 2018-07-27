@@ -620,7 +620,7 @@ function editTask(updatedTask, oldTask) {
 
 
     ```
-    3.HERE IS A LIST OF ANIMATIONS TO CHOOSE FROM
+    3. HERE IS A LIST OF ANIMATIONS TO CHOOSE FROM
         * fadeOutSpin
         * fadeOutRight
         * fadeOutZip
